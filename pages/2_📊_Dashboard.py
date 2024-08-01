@@ -4,10 +4,10 @@ import streamlit as st
 st.write("Hello World")
 
 
-st.set_page_config(
-    page_title="Dashboard",
-    page_icon="📊"
-)
+# st.set_page_config(
+#     page_title="Dashboard",
+#     page_icon="📊"
+# )
 
 
 # Inserta las imágenes en el título
