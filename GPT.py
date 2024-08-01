@@ -22,7 +22,7 @@ from PIL import Image
 
 ################## BACKEND
 
-st.sidebar.success("Select a page above.")
+
 
 os.environ["OPENAI_API_KEY"] = str(st.secrets["KEY_QUERIA"])
 
@@ -80,6 +80,10 @@ st.set_page_config(
     page_title="QuerIA",
     page_icon="📊"
 )
+
+
+st.sidebar.success("Select a page above.")
+
 
 # tabs = st.tabs(["GPT", "Dashboard"])
 
