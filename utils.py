@@ -4,8 +4,8 @@
 
 import os
 import warnings
+import env
 
-from dotenv import load_dotenv
 from langchain_community.utilities import SQLDatabase
 from langchain_openai import ChatOpenAI
 from langchain_experimental.sql import SQLDatabaseChain
@@ -17,12 +17,10 @@ warnings.filterwarnings(
     'warnings_filter',
 )
 
-load_dotenv()
-
 
 # Cargamos la variable de entorno
 # os.environ["OPENAI_API_KEY"] = env.QUERIA_KEY
-os.environ["OPENAI_API_KEY"] = str(os.getenv('KEY_QUERIA'))
+os.environ["OPENAI_API_KEY"] = str(env.KEY_QUERIA)
 
 
 # Cargamos la BBDD con langchain

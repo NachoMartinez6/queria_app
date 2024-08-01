@@ -3,13 +3,12 @@
 
 import utils
 import os
+import env
 import streamlit as st
 
 from openai import OpenAI
-from dotenv import load_dotenv
 from PIL import Image
 
-load_dotenv()
 
 
 st.set_page_config(
@@ -23,8 +22,8 @@ with tabs[0]:
     st.sidebar.success("Select a demo above.")
 
     # Upload avatar images
-    avatar_asistente = Image.open("images\icon_bot.png")
-    avatar_usuario = Image.open("images\icon_developer.png")
+    avatar_asistente = Image.open("images/icon_bot.png")
+    avatar_usuario = Image.open("images/icon_developer.png")
 
 
     # Inserta las imágenes en el título
@@ -39,7 +38,8 @@ with tabs[0]:
     Si realizais todos los pasos, podreís consultar de manera éxitosa a la BBDD, ¡muchas gracias por tu comprensión!''')
 
     # os.environ["OPENAI_API_KEY"] = str(os.getenv('QUERIA_KEY'))
-    api_key = str(os.getenv('KEY_QUERIA'))
+    # api_key = str(os.getenv('KEY_QUERIA'))
+    api_key = str(env.KEY_QUERIA)
 
     client = OpenAI(api_key=api_key)
 
