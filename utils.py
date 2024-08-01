@@ -5,7 +5,7 @@
 import os
 import warnings
 # import env
-from ..queria_app import env
+from ..env import env
 
 from langchain_community.utilities import SQLDatabase
 from langchain_openai import ChatOpenAI

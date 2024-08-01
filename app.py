@@ -3,7 +3,7 @@
 
 import utils
 import os
-from ..queria_app import env
+from ..env import env
 # import env
 import streamlit as st
 
