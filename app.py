@@ -83,7 +83,6 @@ st.set_page_config(
 tabs = st.tabs(["GPT", "Dashboard"])
 
 with tabs[0]: 
-    st.sidebar.success("Select a demo above.")
 
     # Upload avatar images
     avatar_asistente = Image.open("images/icon_bot.png")
