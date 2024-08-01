@@ -1,6 +1,6 @@
 import streamlit as st
 
-st.write("Hello World")
+# st.write("Hello World")
 
 # Inserta las imágenes en el título
 st.markdown(f'<h1>Contacto<h1>', unsafe_allow_html=True)
