@@ -3,7 +3,8 @@
 
 import utils
 import os
-import env
+from ..queria_app import env
+# import env
 import streamlit as st
 
 from openai import OpenAI
