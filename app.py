@@ -23,7 +23,7 @@ from PIL import Image
 ################## BACKEND
 
 
-os.environ["OPENAI_API_KEY"] = str(st.secrets(KEY_QUERIA))
+os.environ["OPENAI_API_KEY"] = str(st.secrets["KEY_QUERIA"])
 
 
 # Cargamos la BBDD con langchain
@@ -104,7 +104,7 @@ with tabs[0]:
     # os.environ["OPENAI_API_KEY"] = str(os.getenv('QUERIA_KEY'))
     # api_key = str(os.getenv('KEY_QUERIA'))
     # api_key = str(env.KEY_QUERIA)
-    api_key = str(st.secrets(KEY_QUERIA))
+    api_key = str(st.secrets["KEY_QUERIA"])
     client = OpenAI(api_key=api_key)
 
     template = """
