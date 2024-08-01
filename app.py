@@ -158,7 +158,7 @@ with tabs[0]:
         with st.chat_message("assistant", avatar=avatar_asistente):
             respuesta = talk_to_sql(prompt)
             # st.session_state.messages.append({"role": "system", "content": respuesta, 'avatar': avatar_asistente})
-            mensajes  = [{"role" : "system", "content": template.format(respuesta=respuesta)}]
+            mensajes  = [{"role" : "user", "content": template.format(respuesta=respuesta)}]
             # history = [{"role": m["role"], "content": m["content"]}
             #         for m in st.session_state.messages]
             stream = client.chat.completions.create(
