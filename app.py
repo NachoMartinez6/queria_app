@@ -1,9 +1,9 @@
 
 
-from ..utils import utils
+from ..queria_app import utils
 # import utils
 import os
-from ..env import env
+from ..queria_app import env
 # import env
 import streamlit as st
 
