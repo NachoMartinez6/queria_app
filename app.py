@@ -147,29 +147,29 @@ with tabs[0]:
 
 
     if prompt := st.chat_input("Tu mejor prompt"):
-        
+        # Add user message to chat history
+        st.session_state.messages.append({"role": "user", "content": prompt, 'avatar': avatar_usuario})
         # Display user message in chat message container
         with st.chat_message("user", avatar=avatar_usuario):
             st.markdown(prompt)
             
-        # Add user message to chat history
-        st.session_state.messages.append({"role": "user", "content": prompt, 'avatar': avatar_usuario})
+
 
         with st.chat_message("assistant", avatar=avatar_asistente):
             respuesta = talk_to_sql(prompt)
-            st.session_state.messages.append({"role": "system", "content": respuesta, 'avatar': avatar_asistente})
+            # st.session_state.messages.append({"role": "system", "content": respuesta, 'avatar': avatar_asistente})
             mensajes  = [{"role" : "system", "content": template.format(respuesta=respuesta)}]
             # history = [{"role": m["role"], "content": m["content"]}
             #         for m in st.session_state.messages]
             stream = client.chat.completions.create(
                 model=st.session_state["openai_model"],
-                messages= mensajes, #+ history,
+                messages= mensajes, # + history,
                 stream=True,
             )
 
             # response = st.write_stream(response_generator(prompt))
             response = st.write_stream(stream)
-
+        st.session_state.messages.append({"role": "system", "content": response, 'avatar': avatar_asistente})
 
 with tabs[1]:
      st.write("Hello World")
