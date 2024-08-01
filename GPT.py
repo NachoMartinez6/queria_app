@@ -22,6 +22,7 @@ from PIL import Image
 
 ################## BACKEND
 
+st.sidebar.success("Select a page above.")
 
 os.environ["OPENAI_API_KEY"] = str(st.secrets["KEY_QUERIA"])
 
