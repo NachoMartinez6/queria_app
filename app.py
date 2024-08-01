@@ -1,15 +1,78 @@
 
+import warnings
 
-from ..queria_app import utils
-# import utils
+from langchain_community.utilities import SQLDatabase
+from langchain_openai import ChatOpenAI
+from langchain_experimental.sql import SQLDatabaseChain
+
+warnings.filterwarnings(
+    'ignore',
+    '.*',
+    UserWarning,
+    'warnings_filter',
+)
+
+
 import os
-from ..queria_app import env
-# import env
 import streamlit as st
 
 from openai import OpenAI
 from PIL import Image
 
+
+################## BACKEND
+
+
+os.environ["OPENAI_API_KEY"] = str(st.secrets(KEY_QUERIA))
+
+
+# Cargamos la BBDD con langchain
+db = SQLDatabase.from_uri("sqlite:///queria.db")
+
+# Creamos el LLM
+llm = ChatOpenAI(temperature=0, model='gpt-3.5-turbo')
+
+# Creamos la cadena
+cadena = SQLDatabaseChain.from_llm(llm=llm, db=db, verbose=False)
+
+# Generamos el prompt
+template_prompt = """
+Eres un agente SQL especializado en trabajar traduciendo consultas de usuario a lenguaje SQL y trayendo el resultado.
+
+Dada una pregunta del usuario, quiero que realices el siguiente paso a paso:
+
+1. Crea una consulta de sqlite3.
+2. Revisa los resultados
+3. Devuelve el dato que corresponda.
+4. Si tienes que hacer alguna aclaración de devolver cualquier texto que sea en español
+
+Importante: 
+
+Si no te dan promps que puedan ser pasados a lenguaje SQL, indica que no puedes realizar una consulta SQL válida que pruebe de otra forma.
+Si te piden otro tipo de información, indica que tu campo de acción se limita a trabajar con lenguaje SQL.
+No pueden hacer DELETE a la tabla, ni crear tablas mediante las consultas que te pidan.
+Trata siempre de trabajar tu respuesta y que sea usualmente extensa.
+
+
+Consulta: {question} 
+
+
+"""
+
+def talk_to_sql(prompt):
+    try:
+        consulta = template_prompt.format(question=prompt)
+        respuesta = cadena.invoke(consulta)
+        resultado = respuesta.get('result')
+    
+    except:
+        resultado = "No puedo realizar una consulta SQL válida con la información proporcionada. Por favor proporcione una pregunta que pueda ser traducida a una consulta SQL."
+    return resultado
+
+
+
+
+################## FRONTEND
 
 
 st.set_page_config(
@@ -40,8 +103,8 @@ with tabs[0]:
 
     # os.environ["OPENAI_API_KEY"] = str(os.getenv('QUERIA_KEY'))
     # api_key = str(os.getenv('KEY_QUERIA'))
-    api_key = str(env.KEY_QUERIA)
-
+    # api_key = str(env.KEY_QUERIA)
+    api_key = str(st.secrets(KEY_QUERIA))
     client = OpenAI(api_key=api_key)
 
     template = """
@@ -94,7 +157,7 @@ with tabs[0]:
         st.session_state.messages.append({"role": "user", "content": prompt, 'avatar': avatar_usuario})
 
         with st.chat_message("assistant", avatar=avatar_asistente):
-            respuesta = utils.talk_to_sql(prompt)
+            respuesta = talk_to_sql(prompt)
             st.session_state.messages.append({"role": "system", "content": respuesta, 'avatar': avatar_asistente})
             mensajes  = [{"role" : "system", "content": template.format(respuesta=respuesta)}]
             # history = [{"role": m["role"], "content": m["content"]}
