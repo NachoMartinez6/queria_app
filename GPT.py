@@ -101,7 +101,7 @@ st.markdown(f'<h1>Bienvenido a Quer<span style="color:dodgerblue">IA</span>!', u
 st.markdown(f'<h3>¡Consulta a la BBDD unicamente mediante un prompt!</h3>', unsafe_allow_html=True)
 
 st.markdown(f'''**Contexto**: La BBDD contiene una tabla denominada energy_dataset con información de la producción y exportación de electricidad
-de diferentes paises de la zona euro, más información en [Dashboard]({dashboard_path}.)
+de diferentes paises de la zona euro, más información en [Dashboard]({dashboard_path}).
 ''')
 st.markdown(f'''Por favor, hay una serie de reglas que debes cumplir:
             
