@@ -13,11 +13,10 @@ import streamlit as st
 st.sidebar.success("Select a page above.")
 
 # Inserta las imágenes en el título
-st.markdown(f'<h1>Bienvenido a Quer<span style="color:dodgerblue">IA</span>!', unsafe_allow_html=True)
-st.markdown(f'<h3>¡Consulta a la BBDD unicamente mediante un prompt!</h3>', unsafe_allow_html=True)
-
-
-
+st.header('Dashboard - Energy dataset')
+st.markdown(''' Descripción mediante analítica avanzada del dataset Energy_dataset.csv
+'''#, unsafe_allow_html=True
+)
 
 
 
