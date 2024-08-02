@@ -111,6 +111,10 @@ Si realizas todos los pasos, podrás consultar de manera éxitosa a la BBDD, ¡M
 api_key = str(st.secrets["KEY_QUERIA"])
 client = OpenAI(api_key=api_key)
 
+
+# En el caso, de que te soliciten graficas y visualizaciones, sientete libre de realizar aquellas visualizaciones que te soliciten con la info aportada
+
+
 template = """
 
 Eres un agente de SQL, recibiendo una respuesta tu objetivo es dejarla tal cual y enviarla de vuelta.

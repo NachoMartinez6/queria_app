@@ -34,7 +34,7 @@ por la formación ofrecida, el feedback y por todo el apoyo realizado!
 
 Para cualquier consulta profesional, nos vemos por [Linkedin]({path_nacho}).
 
-Un saludo! 👋🏾)
+Un saludo! 👋🏾
 
 '''#,  unsafe_allow_html=True
 )
