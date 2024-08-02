@@ -28,7 +28,7 @@ st.markdown(f'''En primer lugar, agradecer a mi compañera [Olex]({path_olex}) p
 También agradecer a [UnicornAcademy]({path_unicorn}) por la oportunidad de realizar este proyecto dentro de su programa formativo,
 por la formación ofrecida, el feedback y por todo el apoyo realizado!
 
-Y por supuesto gracias a ti, por haber visto la aplicación, espero que te haya gustado.
+***Y por supuesto gracias a ti, por haber visto la aplicación, espero que te haya gustado.***
 
 Para cualquier consulta profesional, nos vemos por [Linkedin]({path_nacho}). Un saludo! 👋🏾)
 
