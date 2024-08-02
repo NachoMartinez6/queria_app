@@ -5,3 +5,7 @@ langchain-openai
 langchain-experimental
 openai
 pillow
+pandas
+numpy
+seaborn
+matplotlib
