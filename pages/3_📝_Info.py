@@ -17,12 +17,15 @@ Confío en que hayas probado la funcionalidad y te haya gustado el proyecto, ¡M
 '''#, unsafe_allow_html=True
 )
 
+path_olex = "https://www.linkedin.com/in/olexandrazaporozhets/"
+path_unicorn = "https://www.linkedin.com/school/unicornacademyes/"
+
 
 st.header('Agradecimientos')
-st.markdown('''En primer lugar agradecer a mi compañera [Olex]("https://www.linkedin.com/in/olexandrazaporozhets/") por su ayuda y comprensión
+st.markdown(f'''En primer lugar agradecer a mi compañera [Olex]({path_olex}) por su ayuda y comprensión
 durante todo el proyecto.
             
-También agradecer a [UnicornAcademy]("https://www.linkedin.com/school/unicornacademyes/") por la formación ofrecida, por las clases
+También agradecer a [UnicornAcademy]({path_unicorn}) por la formación ofrecida, por las clases
 y por todo el apoyo realizado!
 
 Y por supuesto gracias a ti, por haber visto la aplicación, espero que os guste. Un saludo! 👋🏾)

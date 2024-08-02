@@ -103,7 +103,7 @@ st.markdown('''Por favor, hay una serie de reglas que debes cumplir:
 2. La consulta que realices tiene que estar planteada para ser traducida a SQL.
 3. Los prompts tienen que centrarse en la temática del GPT y no en temas distintos a los destinados.
         
-Si realizais todos los pasos, podreís consultar de manera éxitosa a la BBDD, ¡muchas gracias por tu comprensión!''')
+Si realizas todos los pasos, podrás consultar de manera éxitosa a la BBDD, ¡Muchas gracias por tu comprensión!''')
 
 # os.environ["OPENAI_API_KEY"] = str(os.getenv('QUERIA_KEY'))
 # api_key = str(os.getenv('KEY_QUERIA'))
