@@ -22,13 +22,13 @@ path_unicorn = "https://www.linkedin.com/school/unicornacademyes/"
 
 
 st.header('Agradecimientos')
-st.markdown(f'''En primer lugar agradecer a mi compañera [Olex]({path_olex}) por su ayuda y comprensión
-durante todo el proyecto.
+st.markdown(f'''En primer lugar, agradecer a mi compañera [Olex]({path_olex}) por su gran labor en las distintas tareas
+(Recolección del dato, BBDD, analítica avanzada...) realizadas y sobretodo por su paciencia conmigo durante todo el proyecto (que no ha sido poca ;).
             
-También agradecer a [UnicornAcademy]({path_unicorn}) por la formación ofrecida, por las clases
-y por todo el apoyo realizado!
+También agradecer a [UnicornAcademy]({path_unicorn}) por la oportunidad de realizar este proyecto dentro de su programa formativo,
+por la formación ofrecida, el feedback y por todo el apoyo realizado!
 
-Y por supuesto gracias a ti, por haber visto la aplicación, espero que os guste. Un saludo! 👋🏾)
+Y por supuesto gracias a ti, por haber visto la aplicación, espero que te haya gustado. Un saludo! 👋🏾)
 
 '''#,  unsafe_allow_html=True
 )
