@@ -100,8 +100,8 @@ dashboard_path = "https://queria.streamlit.app/Dashboard"
 st.markdown(f'<h1>Bienvenido a Quer<span style="color:dodgerblue">IA</span>!', unsafe_allow_html=True)
 st.markdown(f'<h3>¡Consulta a la BBDD unicamente mediante un prompt!</h3>', unsafe_allow_html=True)
 
-st.markdown(f'''**Contexto**: La BBDD contiene una tabla denominada energy_dataset con información de la producción, exportación de electricidad
-de diferentes paises de la zona euro, más información en el [Dashboard]({dashboard_path})
+st.markdown(f'''**Contexto**: La BBDD contiene una tabla denominada energy_dataset con información de la producción y exportación de electricidad
+de diferentes paises de la zona euro, más información en [Dashboard]({dashboard_path}.)
 ''')
 st.markdown(f'''Por favor, hay una serie de reglas que debes cumplir:
             
@@ -109,7 +109,7 @@ st.markdown(f'''Por favor, hay una serie de reglas que debes cumplir:
 2. La consulta que realices tiene que estar planteada para ser traducida a SQL.
 3. Los prompts tienen que centrarse en la temática del GPT y no en temas distintos a los destinados.
 
-Si realizas todos los pasos, podrás consultar de manera éxitosa a la BBDD, ¡Muchas gracias por tu comprensión!''')
+***Si realizas todos los pasos, podrás consultar de manera éxitosa a la BBDD, ¡Muchas gracias por tu comprensión!***''')
 
 # os.environ["OPENAI_API_KEY"] = str(os.getenv('QUERIA_KEY'))
 # api_key = str(os.getenv('KEY_QUERIA'))
