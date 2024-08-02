@@ -3,7 +3,7 @@ import streamlit as st
 # st.write("Hello World")
 
 # Inserta las imágenes en el título
-st.markdown(f'<h2>Información del Proyecto<h2>')
+st.header('Información del Proyecto')
 st.markdown(''' El proyecto Queria fue diseñado como una DEMO para una formación centrada en analisis de datos.
 
 No se trata de una aplicación con fines comerciales, sino más bien divulgativa, el código esta público
@@ -16,7 +16,7 @@ Confío en que hayas probado la funcionalidad y te haya gustado el proyecto, ¡M
 )
 
 
-st.markdown(f'<h2>Agradecimientos</h2>')
+st.header('Agradecimientos')
 st.markdown('''En primer lugar agradecer a mi compañera [Olex]("https://www.linkedin.com/in/olexandrazaporozhets/") por su ayuda y comprensión
 durante todo el proyecto.
             
