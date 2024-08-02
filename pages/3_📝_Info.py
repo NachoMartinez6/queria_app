@@ -4,8 +4,7 @@ import streamlit as st
 
 # Inserta las imágenes en el título
 st.markdown(f'<h2>Información del Proyecto<h2>', unsafe_allow_html=True)
-st.markdown('''
-El proyecto Queria fue diseñado como una DEMO para una formación centrada en analisis de datos.
+st.markdown(''' El proyecto Queria fue diseñado como una DEMO para una formación centrada en analisis de datos.
 
 No se trata de una aplicación con fines comerciales, sino más bien divulgativa, el código esta público
 en mi repositorio de Github para que cualquiera que lo desee pueda replicarlo.
