@@ -2,6 +2,8 @@ import streamlit as st
 
 # st.write("Hello World")
 
+st.sidebar.success("Select a page above.")
+
 # Inserta las imágenes en el título
 st.header('Información del Proyecto')
 st.markdown(''' El proyecto Queria fue diseñado como una DEMO para una formación centrada en analisis de datos.
